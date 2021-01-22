@@ -158,6 +158,7 @@ namespace ShopQuanAo.GiaoDien.NhanVien
 
         private void btnLoaiSP_Click(object sender, EventArgs e)
         {
+            openChildForm(new LoaiSanPham());
             Active();
             btnLoaiSP.BackColor = fromArgb2;
         }

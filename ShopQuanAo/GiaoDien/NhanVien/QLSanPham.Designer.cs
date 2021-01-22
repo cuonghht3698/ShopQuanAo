@@ -292,7 +292,7 @@ namespace ShopQuanAo.GiaoDien.NhanVien
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 325);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1089, 53);
+            this.panel2.Size = new System.Drawing.Size(1125, 53);
             this.panel2.TabIndex = 224;
             // 
             // cbSTrangThai
@@ -397,7 +397,7 @@ namespace ShopQuanAo.GiaoDien.NhanVien
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1089, 325);
+            this.panel1.Size = new System.Drawing.Size(1125, 325);
             this.panel1.TabIndex = 223;
             // 
             // groupBox5
@@ -406,9 +406,9 @@ namespace ShopQuanAo.GiaoDien.NhanVien
             this.groupBox5.Controls.Add(this.btnSua);
             this.groupBox5.Controls.Add(this.btnThem);
             this.groupBox5.Dock = System.Windows.Forms.DockStyle.Left;
-            this.groupBox5.Location = new System.Drawing.Point(1010, 0);
+            this.groupBox5.Location = new System.Drawing.Point(961, 0);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(101, 325);
+            this.groupBox5.Size = new System.Drawing.Size(161, 325);
             this.groupBox5.TabIndex = 6;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Thao tác";
@@ -418,21 +418,22 @@ namespace ShopQuanAo.GiaoDien.NhanVien
             this.btnClear.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnClear.IconColor = System.Drawing.Color.Black;
             this.btnClear.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnClear.Location = new System.Drawing.Point(3, 189);
+            this.btnClear.Location = new System.Drawing.Point(6, 278);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(64, 43);
+            this.btnClear.Size = new System.Drawing.Size(146, 43);
             this.btnClear.TabIndex = 111;
             this.btnClear.Text = "Hủy";
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnSua
             // 
             this.btnSua.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnSua.IconColor = System.Drawing.Color.Black;
             this.btnSua.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnSua.Location = new System.Drawing.Point(3, 129);
+            this.btnSua.Location = new System.Drawing.Point(6, 218);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(64, 43);
+            this.btnSua.Size = new System.Drawing.Size(146, 43);
             this.btnSua.TabIndex = 111;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
@@ -443,9 +444,9 @@ namespace ShopQuanAo.GiaoDien.NhanVien
             this.btnThem.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnThem.IconColor = System.Drawing.Color.Black;
             this.btnThem.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnThem.Location = new System.Drawing.Point(3, 73);
+            this.btnThem.Location = new System.Drawing.Point(6, 162);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(64, 43);
+            this.btnThem.Size = new System.Drawing.Size(146, 43);
             this.btnThem.TabIndex = 111;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
@@ -459,7 +460,7 @@ namespace ShopQuanAo.GiaoDien.NhanVien
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupBox4.Location = new System.Drawing.Point(705, 0);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(305, 325);
+            this.groupBox4.Size = new System.Drawing.Size(256, 325);
             this.groupBox4.TabIndex = 5;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Hình ảnh";
@@ -469,9 +470,9 @@ namespace ShopQuanAo.GiaoDien.NhanVien
             this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.None;
             this.iconButton1.IconColor = System.Drawing.Color.Black;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.Location = new System.Drawing.Point(96, 295);
+            this.iconButton1.Location = new System.Drawing.Point(71, 289);
             this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(109, 24);
+            this.iconButton1.Size = new System.Drawing.Size(109, 30);
             this.iconButton1.TabIndex = 435;
             this.iconButton1.Text = "Chọn ảnh";
             this.iconButton1.UseVisualStyleBackColor = true;
@@ -481,12 +482,13 @@ namespace ShopQuanAo.GiaoDien.NhanVien
             // 
             this.picAnh.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.picAnh.Cursor = System.Windows.Forms.Cursors.Cross;
-            this.picAnh.Location = new System.Drawing.Point(24, 12);
+            this.picAnh.Location = new System.Drawing.Point(6, 12);
             this.picAnh.Name = "picAnh";
-            this.picAnh.Size = new System.Drawing.Size(256, 282);
+            this.picAnh.Size = new System.Drawing.Size(244, 277);
             this.picAnh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picAnh.TabIndex = 434;
             this.picAnh.TabStop = false;
+            this.picAnh.Click += new System.EventHandler(this.iconButton1_Click);
             // 
             // groupBox2
             // 
@@ -524,8 +526,9 @@ namespace ShopQuanAo.GiaoDien.NhanVien
             this.iconButton9.Name = "iconButton9";
             this.iconButton9.Size = new System.Drawing.Size(29, 22);
             this.iconButton9.TabIndex = 44;
-            this.iconButton9.Text = "x";
+            this.iconButton9.Text = "+";
             this.iconButton9.UseVisualStyleBackColor = true;
+            this.iconButton9.Click += new System.EventHandler(this.iconButton9_Click);
             // 
             // cbGioiTinh
             // 
@@ -647,7 +650,7 @@ namespace ShopQuanAo.GiaoDien.NhanVien
             this.dataGridView1.ShowCellToolTips = false;
             this.dataGridView1.ShowEditingIcon = false;
             this.dataGridView1.ShowRowErrors = false;
-            this.dataGridView1.Size = new System.Drawing.Size(1089, 306);
+            this.dataGridView1.Size = new System.Drawing.Size(1125, 306);
             this.dataGridView1.TabIndex = 225;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -655,7 +658,7 @@ namespace ShopQuanAo.GiaoDien.NhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1089, 677);
+            this.ClientSize = new System.Drawing.Size(1125, 677);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -729,8 +732,8 @@ namespace ShopQuanAo.GiaoDien.NhanVien
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ComboBox cbSTrangThai;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

@@ -82,7 +82,7 @@ namespace ShopQuanAo.GiaoDien.NhanVien
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1259, 73);
+            this.panel1.Size = new System.Drawing.Size(1270, 73);
             this.panel1.TabIndex = 0;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             // 
@@ -162,7 +162,7 @@ namespace ShopQuanAo.GiaoDien.NhanVien
             this.iconButton3.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton3.IconSize = 30;
-            this.iconButton3.Location = new System.Drawing.Point(1121, 0);
+            this.iconButton3.Location = new System.Drawing.Point(1132, 0);
             this.iconButton3.Name = "iconButton3";
             this.iconButton3.Size = new System.Drawing.Size(46, 73);
             this.iconButton3.TabIndex = 0;
@@ -178,7 +178,7 @@ namespace ShopQuanAo.GiaoDien.NhanVien
             this.iconButton2.IconColor = System.Drawing.Color.Black;
             this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton2.IconSize = 30;
-            this.iconButton2.Location = new System.Drawing.Point(1167, 0);
+            this.iconButton2.Location = new System.Drawing.Point(1178, 0);
             this.iconButton2.Name = "iconButton2";
             this.iconButton2.Size = new System.Drawing.Size(46, 73);
             this.iconButton2.TabIndex = 0;
@@ -194,7 +194,7 @@ namespace ShopQuanAo.GiaoDien.NhanVien
             this.iconButton1.IconColor = System.Drawing.Color.DarkRed;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton1.IconSize = 30;
-            this.iconButton1.Location = new System.Drawing.Point(1213, 0);
+            this.iconButton1.Location = new System.Drawing.Point(1224, 0);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Size = new System.Drawing.Size(46, 73);
             this.iconButton1.TabIndex = 0;
@@ -533,18 +533,19 @@ namespace ShopQuanAo.GiaoDien.NhanVien
             this.panelParent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelParent.Location = new System.Drawing.Point(152, 73);
             this.panelParent.Name = "panelParent";
-            this.panelParent.Size = new System.Drawing.Size(1107, 679);
+            this.panelParent.Size = new System.Drawing.Size(1118, 679);
             this.panelParent.TabIndex = 1001;
             // 
             // TrangChuNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1259, 752);
+            this.ClientSize = new System.Drawing.Size(1270, 752);
             this.ControlBox = false;
             this.Controls.Add(this.panelParent);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "TrangChuNhanVien";

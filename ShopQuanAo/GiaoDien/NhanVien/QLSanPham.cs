@@ -51,45 +51,56 @@ namespace ShopQuanAo.GiaoDien.NhanVien
 
         private void InsertOrUpdateSP(bool insert)
         {
-            int id, soluong, gianhap, giaban, giaKM, khoId, nccId, loaiId, luotxem, danhgia;
-            string ten, size, mausac, gioitinh, mota, anh;
-            bool active;
-            DateTime ngaynhap = DateTime.Now;
+            try
+            {
 
-            id = Int32.Parse(txtMa.Text);
-            ten = txtTen.Text;
-            soluong = Int32.Parse(txtSoLuong.Text);
-            size = txtSize.Text;
-            mausac = txtMauSac.Text;
-            gioitinh = cbGioiTinh.SelectedItem.ToString();
-            gianhap = Int32.Parse(txtGiaNhap.Text);
-            giaban = Int32.Parse(txtGiaBan.Text);
-            giaKM = Int32.Parse(txtGiaKM.Text);
-            mota = txtMoTa.Text;
-            khoId = Ham.GetIdFromCombobox(cbKho.SelectedItem.ToString());
-            nccId = Ham.GetIdFromCombobox(cbNCC.Text);
-            loaiId = Ham.GetIdFromCombobox(cbLoai.Text);
-            active = ckHoatDong.Checked;
-            anh = Ham.GetStringFromImage(picAnh.Image);
-            if (insert)
-            {
-                con.ExecuteNonQuery("INSERT INTO [dbo].[SanPham]([ten],[soluong],[size],[mau],[gioitinh],[gianhap],[giaban]" +
-               ",[khuyenmai],[ngaynhap],[mota],[khoId],[nccId],[loaispId],[active],[luotxem],[danhgia],[anh]) VALUES " +
-               "(N'" + ten + "'," + soluong + ",N'" + size + "',N'" + mausac + "',N'" + gioitinh +
-               "'," + gianhap + "," + giaban + "," + giaKM + ",'" + ngaynhap +
-               "',N'" + mota + "'," + khoId + " ," + nccId + "," + loaiId + ",'" + active +
-               "',0,0,'" + anh + "')");
-                MessageBox.Show("Thêm sản phẩm thành công!","Thông báo");
+
+                int id, soluong, gianhap, giaban, giaKM, khoId, nccId, loaiId, luotxem, danhgia;
+                string ten, size, mausac, gioitinh, mota, anh;
+                bool active;
+                DateTime ngaynhap = DateTime.Now;
+                id = Int32.Parse(txtMa.Text);
+                ten = txtTen.Text;
+                soluong = Int32.Parse(txtSoLuong.Text);
+                size = txtSize.Text;
+                mausac = txtMauSac.Text;
+                gioitinh = cbGioiTinh.SelectedItem.ToString();
+                gianhap = Int32.Parse(txtGiaNhap.Text);
+                giaban = Int32.Parse(txtGiaBan.Text);
+                giaKM = Int32.Parse(txtGiaKM.Text);
+                mota = txtMoTa.Text;
+                khoId = Ham.GetIdFromCombobox(cbKho.SelectedItem.ToString());
+                nccId = Ham.GetIdFromCombobox(cbNCC.Text);
+                loaiId = Ham.GetIdFromCombobox(cbLoai.Text);
+                active = ckHoatDong.Checked;
+                anh = Ham.GetStringFromImage(picAnh.Image);
+                if (insert)
+                {
+                    con.ExecuteNonQuery("INSERT INTO [dbo].[SanPham]([ten],[soluong],[size],[mau],[gioitinh],[gianhap],[giaban]" +
+                   ",[khuyenmai],[ngaynhap],[mota],[khoId],[nccId],[loaispId],[active],[luotxem],[danhgia],[anh]) VALUES " +
+                   "(N'" + ten + "'," + soluong + ",N'" + size + "',N'" + mausac + "',N'" + gioitinh +
+                   "'," + gianhap + "," + giaban + "," + giaKM + ",'" + ngaynhap +
+                   "',N'" + mota + "'," + khoId + " ," + nccId + "," + loaiId + ",'" + active +
+                   "',0,0,'" + anh + "')");
+                    MessageBox.Show("Thêm sản phẩm thành công!", "Thông báo");
+                }
+                else
+                {
+
+                    con.ExecuteNonQuery("UPDATE SanPham set ten =N'" + ten + "',soluong= " + soluong + ", size = N'" + size + "'," +
+                        "mau = N'" + mausac + "',gioitinh = N'" + gioitinh + "', gianhap = " + gianhap + ",giaban =" + giaban + ",khuyenmai = " +
+                        giaKM + ",mota = N'" + mota + "',khoId = " + khoId + "," +
+                        "nccId = " + nccId + ",loaispId = " + loaiId + ",active ='" + active + "', anh = '" + anh + "'  where id = " + id);
+                    MessageBox.Show("Sửa sản phẩm thành công!", "Thông báo");
+                }
+                getData();
             }
-            else
+            catch (Exception)
             {
-                con.ExecuteNonQuery("UPDATE SanPham set ten =N'" + ten + "',soluong= " + soluong + ", size = N'" + size + "'," +
-                    "mau = N'" + mausac + "',gioitinh = N'" + gioitinh + "', gianhap = " + gianhap + ",giaban =" + giaban + ",khuyenmai = " +
-                    giaKM + ",mota = N'" + mota + "',khoId = " + khoId + "," +
-                    "nccId = " + nccId + ",loaispId = " + loaiId + ",active ='" + active + "', anh = '" + anh + "'  where id = " + id);
-                MessageBox.Show("Sửa sản phẩm thành công!", "Thông báo");
+
+                MessageBox.Show("Thông tin nhập không chính xác","Thông báo") ;
+          
             }
-            getData();
         }
         private void GetDataDM()
         {
@@ -198,12 +209,19 @@ namespace ShopQuanAo.GiaoDien.NhanVien
 
         private void btnThem_Click(object sender, EventArgs e)
         {
+
             InsertOrUpdateSP(true);
+
+
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            InsertOrUpdateSP(false);
+            if (!String.IsNullOrEmpty(txtMa.Text))
+            {
+                InsertOrUpdateSP(false);
+
+            }
         }
 
         private void cbSTrangThai_SelectedIndexChanged(object sender, EventArgs e)
@@ -217,6 +235,55 @@ namespace ShopQuanAo.GiaoDien.NhanVien
                 StrangThai = cbSTrangThai.SelectedIndex == 1 ? 1 : 0;
             }
             getData();
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            foreach (Control mycontrols in groupBox1.Controls)
+            {
+                if (mycontrols is TextBox)
+                {
+
+                    (mycontrols as TextBox).Text = string.Empty;
+
+                }
+            }
+            foreach (Control mycontrols in groupBox2.Controls)
+            {
+
+
+                if (mycontrols is ComboBox)
+
+                {
+
+                    (mycontrols as ComboBox).SelectedIndex = 0;
+
+                }
+
+                else if (mycontrols is CheckBox)
+
+                {
+
+                    (mycontrols as CheckBox).Checked = true;
+
+                }
+
+            }
+            picAnh.Image = null;
+
+        }
+
+        private void iconButton9_Click(object sender, EventArgs e)
+        {
+            LoaiSanPham l = new LoaiSanPham();
+            l.StartPosition = FormStartPosition.CenterParent;
+            l.ShowDialog();
+            l.FormClosing += L_FormClosing; ;
+        }
+
+        private void L_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            GetDataDM();
         }
 
         private void cbSKho_SelectedIndexChanged(object sender, EventArgs e)
